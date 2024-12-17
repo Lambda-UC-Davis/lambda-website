@@ -1,4 +1,6 @@
 ---
+import Navigation from '../components/Navigation.astro';
+
 interface Props {
 	title: string;
 }
@@ -10,41 +12,73 @@ const { title } = Astro.props;
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
+		<meta name="description" content="Lambda is an organization for students interested in programming languages and compilers at the University of California, Davis." />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
+		<title>Lambda | {title}</title>
 	</head>
 	<body>
+		<Navigation/>
 		<slot />
 	</body>
 </html>
 <style is:global>
-	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
+	@import url('https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..900&display=swap');
+
+	@tailwind base;
+	@tailwind components;
+	@tailwind utilities;
+
+	html, body {
+		/* SPACING */
+		padding: 0;
+		margin: 0;
+		
+		/* TEXT */
+		font-family: 'Golos Text', sans-serif;
+		text-align: left;
+		color: black;
 	}
-	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
+
+	main {
+		@apply w-[750px] max-w-full pt-[128px] block m-auto;
 	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
+
+	/* GENERAL TEXT STYLES */
+	h1, h2, h3, h4, h5 {
+		margin: 0px;
+		font-weight: 600;
+		@apply mb-4;
+	}
+
+	p, a, span {
+		font-weight: 400;
+		@apply mb-4;
+	}
+
+	/* SPECIFIC TEXT STYLES */
+	h1 {
+		@apply text-5xl;
+	}
+
+	h2 {
+		@apply text-4xl;
+	}
+	
+	h3 {
+		@apply text-3xl;
+	}
+
+	h4 {
+		@apply text-2xl;
+	}
+
+	h5 {
+		@apply text-xl;
+	}
+
+	p {
+		@apply text-lg;
 	}
 </style>

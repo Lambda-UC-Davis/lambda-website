@@ -1,17 +1,17 @@
 ---
-interface Props {
-    class?: string
-}
+import Image from "astro/components/Image.astro";
 
-const { class: styles } = Astro.props;
+import logo from "../assets/images/logo/LogoBlack.png";
 ---
 
-<div class={`p-4 rounded-xl border border-slate-300 ${styles || ''}`}>
-    <slot/>
-</div>
+<nav class="w-full p-4 fixed flex justify-center">
+    <div class="w-[750px] max-w-full border border-slate-300 rounded-full px-6 py-4 flex justify-center">
+        <Image class="h-12 w-auto" src={logo} alt="Lambda UC Davis"/>
+    </div>
+</nav>
 
 <style>
-    div {
+    nav div {
         @apply backdrop-blur-md;
 
         background: rgb(153, 153, 153);
