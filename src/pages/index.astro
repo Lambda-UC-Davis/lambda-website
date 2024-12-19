@@ -4,6 +4,7 @@ import Layout from '../layouts/Layout.astro';
 import Button from '../components/Button.astro';
 import Divider from '../components/Divider.astro';
 import Card from '../components/Card.astro';
+import Image from 'astro/components/Image.astro';
 ---
 
 <Layout title="Home">
@@ -29,36 +30,67 @@ import Card from '../components/Card.astro';
 		</p>
 
 		<h3>Working Groups</h3>
-		<div class="flex gap-4 mb-8">
-			<Card class="w-72 h-72">
-				<h4>Bend</h4>
+		<div class="card-grid mb-8">
+			<Card class="h-full flex flex-col justify-between">
+				<div>
+					<h4>Bend</h4>
+					<p>Bend is a massively parallel programming language based on the concept of interaction combinators.</p>
+				</div>
+
+				<img class="group-image w-[150px]" src="https://higherorderco.com/_next/image?url=%2Flogo.gif&w=828&q=75"/>
+				<div class="flex justify-end">
+					<Button>
+						More
+					</Button>
+				</div>
 			</Card>
 
-			<Card class="w-72 h-72">
-				<h4>Swift</h4>
+			<Card class="h-full flex flex-col justify-between">
+				<div>
+					<h4>Swift</h4>
+					<p>Swift is a high-level, multi-paradigm, general-purpose programming language developed by Apple.</p>
+				</div>
+
+				<img class="group-image w-[100px]" src="https://developer.apple.com/swift/images/swift-logo.svg"/>
+				<div class="flex justify-end">
+					<Button>
+						More
+					</Button>
+				</div>
 			</Card>
 		</div>
 
 		<h3>Learning Groups</h3>
-		<div class="flex gap-4 mb-8">
-			<Card class="w-72 h-72">
+		<div class="card-grid mb-8">
+			<Card class="h-full flex flex-col justify-between">
 				<h4>Haskell</h4>
+				<p>Learn about Haskell with us!</p>
+
+				<img class="group-image w-[100px]" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Haskell-Logo.svg/1024px-Haskell-Logo.svg.png"/>
+				<div class="flex justify-end">
+					<Button>
+						More
+					</Button>
+				</div>
 			</Card>
 
-			<Card class="w-72 h-72">
+			<Card class="h-full flex flex-col justify-between">
 				<h4>OCaml</h4>
-			</Card>
-		</div>
+				<p>Learn about OCaml with us!</p>
 
-		<h3>Meta Groups</h3>
-		<div class="flex gap-4">
-			<Card class="w-72 h-72">
-				<h4>Outreach</h4>
-			</Card>
-
-			<Card class="w-72 h-72">
-				<h4>Events</h4>
+				<img class="group-image w-[100px]" src="https://raw.githubusercontent.com/ocaml/ocaml-logo/refs/heads/master/Colour/SVG/colour-icon.svg"/>
+				<div class="flex justify-end">
+					<Button>
+						More
+					</Button>
+				</div>
 			</Card>
 		</div>
 	</main>
 </Layout>
+
+<style>
+	.group-image {
+		@apply max-w-full m-auto mb-4;
+	}
+</style>
